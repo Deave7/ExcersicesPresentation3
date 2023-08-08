@@ -2,11 +2,6 @@
 {
     internal class Program
     {
-        static void Main(string[] args)
-        {
-            Exempel1();
-        }
-
         static void Exempel1() //Övning 1
         {
             int largeNumber = 1; //Initierar variablen largeNumber och sätter dess värde till 1
@@ -64,15 +59,20 @@
 
         static void Exempel3() //Övning 3
         {
-            int numberOne = 8;
-            int numberTwo = 4;
-            int numberThree = 6;
+            //Initierar variabler
+            int numberOne = 30;
+            int numberTwo = 30;
+            int numberThree = 30;
 
-            if (numberOne > numberTwo)
+            if (numberOne > numberTwo) //OM numberOne är större än numberTwo
             {
-                if (numberOne > numberThree)
+                if (numberOne > numberThree) //OM numberOne > numberThree
                 {
-                    Console.WriteLine(numberOne + " the largest number");
+                    Console.WriteLine(numberOne + " is the largest number");  //Skriver ut resultatet
+                }
+                else
+                {
+                    Console.WriteLine(numberThree + " is the largest number"); 
                 }
             }
 
@@ -80,16 +80,16 @@
             {
                 if (numberTwo > numberThree)
                 {
-                    Console.WriteLine(numberTwo + " the largest number");
+                    Console.WriteLine(numberTwo + " is the largest number");
+                }
+                else
+                {
+                    Console.WriteLine(numberThree + " is the largest number");
                 }
             }
-
-            else if (numberThree > numberOne)
+            else
             {
-                if (numberThree > numberTwo)
-                {
-                    Console.WriteLine(numberThree + " the largest number");
-                }
+               Console.WriteLine("Skriv inte in tre av samma tal");
             }
         }
 
@@ -259,6 +259,73 @@
             {
                 Console.WriteLine("No real roots.");
             }
+        }
+
+        static void Exempel7() //Övning 7 
+        {
+            Console.WriteLine("Please input five numbers: "); 
+
+            //Initierar variabler att spara användar input i 
+
+            Console.WriteLine("Please input the first number: ");
+            int numOne = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Please input the first number: ");
+            int numTwo = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Please input the first number: ");
+            int numThree = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Please input the first number: ");
+            int numFour = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Please input the first number: ");
+            int numFive = Convert.ToInt32(Console.ReadLine());
+
+            //If satser för om varje variabel är störst. Varje if sats kollar av om t.ex. numOne är större än de andra 4 variablerna
+
+            if (numOne > numTwo && numOne > numThree && numOne > numFour && numOne > numFive) 
+            {
+                Console.WriteLine($"{numOne} is the largest number");
+            }
+            else if (numTwo > numOne && numTwo > numThree && numTwo > numFour && numTwo > numFive)
+            {
+                Console.WriteLine($"{numTwo} is the largest number");
+            }
+            else if (numThree > numOne && numThree > numTwo && numThree > numFour && numThree > numFive)
+            {
+                Console.WriteLine($"{numThree} is the largest number");
+            }
+            else if (numFour > numOne && numFour > numThree && numFour > numTwo && numFour > numFive)
+            {
+                Console.WriteLine($"{numFour} is the largest number");
+            }
+            else if (numFive > numOne && numFive > numThree && numFive > numFour && numFive > numTwo)
+            {
+                Console.WriteLine($"{numFive} is the largest number");
+            }
+        }
+
+        static void Exempel8() //Övning 8
+        {
+            Console.WriteLine("Please pick one of the following to input: ");
+            Console.WriteLine("[I]nt");
+            Console.WriteLine("[D]ouble");
+            Console.WriteLine("[S]tring");
+            string choice = Console.ReadLine().ToUpper();
+          
+            switch (choice)
+            {
+                case "I":
+                    Console.WriteLine("Please enter your int: "); 
+                    break;
+            }
+
+        }
+
+        static void Main(string[] args)
+        {
+            Exempel3();
         }
     }
 }
